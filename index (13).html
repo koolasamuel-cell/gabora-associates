@@ -1,0 +1,2189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <title>Gabora &amp; Associates — Law · Counsel · Community</title>
+  <meta name="description" content="Gabora &amp; Associates — Premium legal counsel in Kumasi, Ghana. Law, Counsel, Community.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0b1c2c;
+      --navy-deep: #07141f;
+      --blue: #1a6fa8;
+      --cyan: #1aa6c8;
+      --gold: #c9a227;
+      --gold-light: #e8c547;
+      --gold-pale: #f7e7a1;
+      --ink: #1a2332;
+      --muted: #5a6f82;
+      --line: #e2e8f0;
+      --bg: #f4f7fb;
+      --white: #ffffff;
+      --green: #168456;
+      --red: #b83a48;
+      --shadow: 0 4px 24px rgba(11,28,44,.10);
+      --shadow-lg: 0 16px 48px rgba(11,28,44,.16);
+      --radius: 14px;
+      --font: "Plus Jakarta Sans", system-ui, sans-serif;
+      --display: "Sora", Georgia, serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font: 15px/1.55 var(--font);
+      color: var(--ink);
+      background: var(--bg);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; border: 0; cursor: pointer; background: none; }
+    .hidden { display: none !important; }
+
+    /* ========== SITE SHELL ========== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: linear-gradient(180deg, #0b1c2c 0%, #0f2740 100%);
+      border-bottom: 1px solid rgba(201,162,39,.22);
+      box-shadow: 0 4px 20px rgba(0,0,0,.18);
+    }
+    .header-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 28px;
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-shrink: 0;
+    }
+    .brand-mark {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(145deg, #f7e7a1 0%, #c9a227 50%, #8a7018 100%);
+      display: grid;
+      place-items: center;
+      font-family: var(--display);
+      font-weight: 800;
+      font-size: 18px;
+      color: #1a120b;
+      letter-spacing: -0.04em;
+      box-shadow: 0 4px 14px rgba(201,162,39,.35), inset 0 1px 0 rgba(255,255,255,.35);
+    }
+    .brand-text strong {
+      display: block;
+      font-family: var(--display);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: #e8c547;
+      line-height: 1.2;
+    }
+    .brand-text span {
+      font-size: 10.5px;
+      letter-spacing: 0.22em;
+      color: #8fb0c8;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .nav-desktop {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .nav-link {
+      padding: 10px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: #b8cfe0;
+      border-radius: 8px;
+      transition: color .18s, background .18s;
+    }
+    .nav-link:hover { color: #fff; background: rgba(255,255,255,.07); }
+    .nav-link.active {
+      color: #e8c547;
+      background: rgba(232,197,71,.12);
+    }
+    .nav-cta {
+      margin-left: 10px;
+      padding: 11px 20px;
+      background: linear-gradient(180deg, #2a241c 0%, #1a1510 100%);
+      color: #e8c547;
+      font-weight: 700;
+      font-size: 12.5px;
+      letter-spacing: 0.1em;
+      border: 1.5px solid #c9a227;
+      border-radius: 10px;
+      box-shadow: 0 3px 0 #8a7018;
+      transition: transform .18s, filter .18s;
+    }
+    .nav-cta:hover { transform: translateY(-1px); filter: brightness(1.08); }
+    .menu-toggle {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: rgba(255,255,255,.08);
+      color: #e8c547;
+      font-size: 22px;
+      place-items: center;
+    }
+    .mobile-nav {
+      display: none;
+      background: #0b1c2c;
+      border-top: 1px solid rgba(201,162,39,.15);
+      padding: 12px 20px 20px;
+    }
+    .mobile-nav.open { display: block; }
+    .mobile-nav .nav-link {
+      display: block;
+      padding: 14px 16px;
+      border-radius: 10px;
+    }
+    .mobile-nav .nav-cta {
+      display: block;
+      text-align: center;
+      margin: 12px 0 0;
+    }
+
+    /* ========== PAGE CONTAINER ========== */
+    #app {
+      min-height: calc(100vh - 78px - 220px);
+    }
+    .page {
+      display: none;
+      animation: pageIn .35s ease;
+    }
+    .page.active { display: block; }
+    @keyframes pageIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ========== SHARED SECTIONS ========== */
+    .page-hero {
+      position: relative;
+      padding: 72px 28px 64px;
+      background: linear-gradient(145deg, #0b1c2c 0%, #123a5c 45%, #0f2740 100%);
+      color: #f5e6c8;
+      overflow: hidden;
+      text-align: center;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 30%, rgba(201,162,39,.12) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 70%, rgba(26,111,168,.15) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .page-hero .inner { position: relative; z-index: 1; max-width: 820px; margin: 0 auto; }
+    .page-hero .eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: #e8c547;
+      margin-bottom: 14px;
+    }
+    .page-hero h1 {
+      font-family: var(--display);
+      font-size: clamp(28px, 4.5vw, 42px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+    .page-hero p {
+      font-size: 16px;
+      color: #b8cfe0;
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .section {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 64px 28px;
+    }
+    .section-head {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .section-head .eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 10px;
+    }
+    .section-head h2 {
+      font-family: var(--display);
+      font-size: clamp(24px, 3.2vw, 34px);
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+    .section-head p {
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto;
+      font-size: 15px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 26px;
+      font-weight: 700;
+      font-size: 13.5px;
+      letter-spacing: 0.06em;
+      border-radius: 10px;
+      transition: transform .18s, box-shadow .18s, filter .18s;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn:active { transform: translateY(0); }
+    .btn-gold {
+      background: linear-gradient(180deg, #2a241c 0%, #1a1510 100%);
+      color: #e8c547;
+      border: 1.5px solid #c9a227;
+      box-shadow: 0 4px 0 #8a7018, 0 8px 20px rgba(0,0,0,.2);
+    }
+    .btn-gold:hover { filter: brightness(1.08); box-shadow: 0 6px 0 #8a7018, 0 12px 28px rgba(0,0,0,.25); }
+    .btn-outline {
+      background: transparent;
+      color: #e8c547;
+      border: 1.5px solid rgba(232,197,71,.5);
+    }
+    .btn-outline:hover { background: rgba(232,197,71,.1); border-color: #e8c547; }
+    .btn-blue {
+      background: linear-gradient(135deg, #1a6fa8, #1aa6c8);
+      color: #fff;
+      border: none;
+      box-shadow: 0 6px 18px rgba(26,111,168,.3);
+    }
+    .btn-blue:hover { filter: brightness(1.06); }
+
+    /* ========== HOME ========== */
+    .home-hero {
+      position: relative;
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(145deg, #0b1c2c 0%, #123a5c 40%, #0f2740 100%);
+      overflow: hidden;
+      color: #f5e6c8;
+    }
+    .home-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 15% 20%, rgba(201,162,39,.14) 0%, transparent 45%),
+        radial-gradient(ellipse at 85% 80%, rgba(26,111,168,.18) 0%, transparent 50%),
+        linear-gradient(180deg, transparent 60%, rgba(7,20,31,.6) 100%);
+      pointer-events: none;
+    }
+    .home-hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse at center, black 20%, transparent 75%);
+      pointer-events: none;
+    }
+    .home-hero .content {
+      position: relative;
+      z-index: 2;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 100px 28px 80px;
+      width: 100%;
+    }
+    .home-hero .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: rgba(232,197,71,.12);
+      border: 1px solid rgba(232,197,71,.3);
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #e8c547;
+      margin-bottom: 28px;
+    }
+    .home-hero h1 {
+      font-family: var(--display);
+      font-size: clamp(36px, 6vw, 58px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      color: #fff;
+      max-width: 720px;
+      margin-bottom: 20px;
+    }
+    .home-hero h1 span {
+      background: linear-gradient(135deg, #f7e7a1, #c9a227);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .home-hero .lead {
+      font-size: 18px;
+      color: #b8cfe0;
+      max-width: 520px;
+      line-height: 1.65;
+      margin-bottom: 36px;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+
+    .practice-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+    }
+    .practice-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      box-shadow: var(--shadow);
+      transition: transform .22s, box-shadow .22s, border-color .22s;
+      position: relative;
+      overflow: hidden;
+    }
+    .practice-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--blue));
+      opacity: 0;
+      transition: opacity .22s;
+    }
+    .practice-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(26,111,168,.25);
+    }
+    .practice-card:hover::after { opacity: 1; }
+    .practice-card .icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #e8f3fb, #d4eaf7);
+      display: grid;
+      place-items: center;
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
+    .practice-card h3 {
+      font-family: var(--display);
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .practice-card p {
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    .team-preview-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .team-preview-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      transition: transform .22s, box-shadow .22s;
+      text-align: center;
+    }
+    .team-preview-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+    .team-preview-card .photo {
+      height: 180px;
+      background: linear-gradient(145deg, #0f2740, #1a3a5c);
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .team-preview-card .photo .initials {
+      font-family: var(--display);
+      font-size: 42px;
+      font-weight: 800;
+      color: #c9a227;
+      letter-spacing: -0.03em;
+      text-shadow: 0 4px 16px rgba(0,0,0,.3);
+    }
+    .team-preview-card .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .team-preview-card .info {
+      padding: 18px 14px 20px;
+    }
+    .team-preview-card .info h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .team-preview-card .info span {
+      font-size: 12px;
+      color: var(--blue);
+      font-weight: 600;
+    }
+
+    .cta-banner {
+      background: linear-gradient(135deg, #0b1c2c 0%, #123a5c 50%, #0f2740 100%);
+      border-radius: 20px;
+      padding: 48px 40px;
+      text-align: center;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    .cta-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(201,162,39,.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .cta-banner h2 {
+      font-family: var(--display);
+      font-size: clamp(22px, 3vw, 30px);
+      font-weight: 700;
+      margin-bottom: 12px;
+      position: relative;
+    }
+    .cta-banner p {
+      color: #b8cfe0;
+      max-width: 480px;
+      margin: 0 auto 28px;
+      position: relative;
+    }
+
+    /* ========== ABOUT ========== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+    .about-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 32px 28px;
+      box-shadow: var(--shadow);
+    }
+    .about-card h3 {
+      font-family: var(--display);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .about-card h3 span {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #e8f3fb, #d4eaf7);
+      display: grid;
+      place-items: center;
+      font-size: 16px;
+    }
+    .about-card p {
+      color: var(--muted);
+      font-size: 14.5px;
+      line-height: 1.65;
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 32px;
+    }
+    .value-item {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 22px 18px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: transform .2s, border-color .2s;
+    }
+    .value-item:hover {
+      transform: translateY(-3px);
+      border-color: rgba(201,162,39,.4);
+    }
+    .value-item .v-icon {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+    .value-item h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .value-item p {
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ========== TEAM ========== */
+    .team-hierarchy {
+      display: flex;
+      flex-direction: column;
+      gap: 48px;
+    }
+    .team-group h3 {
+      font-family: var(--display);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid rgba(201,162,39,.25);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .team-group h3::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 3px rgba(201,162,39,.25);
+    }
+    .team-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 22px;
+    }
+    .team-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      transition: transform .25s cubic-bezier(.22,1,.36,1), box-shadow .25s, border-color .25s;
+      position: relative;
+    }
+    .team-card:hover {
+      transform: translateY(-8px) scale(1.01);
+      box-shadow: 0 20px 50px rgba(11,28,44,.16);
+      border-color: rgba(26,111,168,.3);
+    }
+    .team-card .photo-wrap {
+      height: 220px;
+      background: linear-gradient(160deg, #0f2740 0%, #1a3a5c 50%, #0b1c2c 100%);
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+    }
+    .team-card .photo-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 50%, rgba(11,28,44,.55) 100%);
+      pointer-events: none;
+    }
+    .team-card .photo-wrap .initials {
+      font-family: var(--display);
+      font-size: 52px;
+      font-weight: 800;
+      color: #c9a227;
+      letter-spacing: -0.04em;
+      text-shadow: 0 6px 20px rgba(0,0,0,.35);
+      z-index: 1;
+    }
+    .team-card .photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .team-card .card-body {
+      padding: 20px 18px 22px;
+      text-align: center;
+    }
+    .team-card .card-body h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px;
+      letter-spacing: -0.01em;
+    }
+    .team-card .card-body .role {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--blue);
+      margin-bottom: 6px;
+    }
+    .team-card .card-body .dept {
+      font-size: 11.5px;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+    }
+    .team-card .card-body .view-link {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.06em;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity .2s, transform .2s;
+    }
+    .team-card:hover .view-link {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ========== PROFILE MODAL ========== */
+    .profile-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(7,20,31,.72);
+      backdrop-filter: blur(6px);
+      z-index: 300;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .28s, visibility .28s;
+    }
+    .profile-backdrop.open {
+      opacity: 1;
+      visibility: visible;
+    }
+    .profile-modal {
+      background: linear-gradient(165deg, #f8fafc 0%, #eef4f9 100%);
+      width: min(920px, 100%);
+      max-height: 90vh;
+      overflow: auto;
+      border-radius: 20px;
+      box-shadow: 0 32px 80px rgba(0,0,0,.35);
+      border: 1px solid rgba(26,111,168,.12);
+      transform: translateY(24px) scale(0.97);
+      transition: transform .32s cubic-bezier(.22,1,.36,1);
+      position: relative;
+    }
+    .profile-backdrop.open .profile-modal {
+      transform: translateY(0) scale(1);
+    }
+    .profile-close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(11,28,44,.08);
+      color: var(--navy);
+      font-size: 22px;
+      display: grid;
+      place-items: center;
+      z-index: 5;
+      transition: background .15s;
+    }
+    .profile-close:hover { background: rgba(11,28,44,.15); }
+    .profile-layout {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      min-height: 420px;
+    }
+    .profile-photo-col {
+      background: linear-gradient(160deg, #0b1c2c 0%, #123a5c 100%);
+      padding: 40px 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    .profile-photo-col::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 20%, rgba(201,162,39,.18) 0%, transparent 55%);
+      pointer-events: none;
+    }
+    .profile-photo-circle {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 4px solid #c9a227;
+      overflow: hidden;
+      background: #1a3a5c;
+      display: grid;
+      place-items: center;
+      margin-bottom: 22px;
+      box-shadow: 0 12px 40px rgba(0,0,0,.35), 0 0 0 8px rgba(201,162,39,.15);
+      position: relative;
+      z-index: 1;
+    }
+    .profile-photo-circle .initials {
+      font-family: var(--display);
+      font-size: 56px;
+      font-weight: 800;
+      color: #c9a227;
+      letter-spacing: -0.04em;
+    }
+    .profile-photo-circle img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .profile-photo-col h2 {
+      font-family: var(--display);
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      position: relative;
+      z-index: 1;
+    }
+    .profile-photo-col .role {
+      font-size: 13px;
+      font-weight: 600;
+      color: #e8c547;
+      letter-spacing: 0.04em;
+      position: relative;
+      z-index: 1;
+    }
+    .profile-photo-col .dept {
+      font-size: 12px;
+      color: #8fb0c8;
+      margin-top: 6px;
+      position: relative;
+      z-index: 1;
+    }
+    .profile-info-col {
+      padding: 40px 36px 36px;
+    }
+    .profile-info-col .section-label {
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 8px;
+    }
+    .profile-info-col h3 {
+      font-family: var(--display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 18px;
+    }
+    .profile-meta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .profile-meta-item {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 14px 16px;
+    }
+    .profile-meta-item label {
+      display: block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+    .profile-meta-item span {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--ink);
+    }
+    .profile-bio {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px 20px;
+      margin-bottom: 20px;
+    }
+    .profile-bio p {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+    .profile-note {
+      font-size: 12.5px;
+      color: var(--muted);
+      font-style: italic;
+      padding: 12px 0 0;
+      border-top: 1px solid var(--line);
+    }
+
+    /* ========== NEWS ========== */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 24px;
+    }
+    .news-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      transition: transform .22s, box-shadow .22s;
+    }
+    .news-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+    .news-card .thumb {
+      height: 180px;
+      background: linear-gradient(135deg, #123a5c, #1a6fa8);
+      display: grid;
+      place-items: center;
+      font-size: 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .news-card .thumb::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 40%, rgba(11,28,44,.5) 100%);
+    }
+    .news-card .body {
+      padding: 22px 20px 24px;
+    }
+    .news-card .date {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .news-card h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+      line-height: 1.35;
+    }
+    .news-card p {
+      font-size: 13.5px;
+      color: var(--muted);
+      line-height: 1.55;
+    }
+
+    /* News article modal */
+    .article-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(7,20,31,.72);
+      backdrop-filter: blur(6px);
+      z-index: 300;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .28s, visibility .28s;
+    }
+    .article-backdrop.open {
+      opacity: 1;
+      visibility: visible;
+    }
+    .article-modal {
+      background: #fff;
+      width: min(720px, 100%);
+      max-height: 88vh;
+      overflow: auto;
+      border-radius: 18px;
+      box-shadow: 0 32px 80px rgba(0,0,0,.3);
+      transform: translateY(20px);
+      transition: transform .3s cubic-bezier(.22,1,.36,1);
+      position: relative;
+    }
+    .article-backdrop.open .article-modal { transform: translateY(0); }
+    .article-close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(11,28,44,.08);
+      color: var(--navy);
+      font-size: 20px;
+      display: grid;
+      place-items: center;
+      z-index: 2;
+    }
+    .article-close:hover { background: rgba(11,28,44,.14); }
+    .article-hero {
+      height: 200px;
+      background: linear-gradient(135deg, #0b1c2c, #1a6fa8);
+      display: grid;
+      place-items: center;
+      font-size: 64px;
+    }
+    .article-body {
+      padding: 32px 36px 40px;
+    }
+    .article-body .date {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+    .article-body h2 {
+      font-family: var(--display);
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 18px;
+      line-height: 1.25;
+    }
+    .article-body p {
+      font-size: 15px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+
+    /* ========== MEDIA ========== */
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .media-item {
+      aspect-ratio: 4/3;
+      border-radius: 14px;
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+      box-shadow: var(--shadow);
+      background: linear-gradient(145deg, #0f2740, #1a3a5c);
+      transition: transform .22s, box-shadow .22s;
+    }
+    .media-item:hover {
+      transform: scale(1.03);
+      box-shadow: var(--shadow-lg);
+    }
+    .media-item .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 50%, rgba(11,28,44,.7) 100%);
+      display: flex;
+      align-items: flex-end;
+      padding: 16px;
+      opacity: 0;
+      transition: opacity .2s;
+    }
+    .media-item:hover .overlay { opacity: 1; }
+    .media-item .overlay span {
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .media-item .placeholder {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      place-items: center;
+      font-size: 42px;
+      color: rgba(201,162,39,.4);
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.92);
+      z-index: 400;
+      display: grid;
+      place-items: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .25s, visibility .25s;
+    }
+    .lightbox.open {
+      opacity: 1;
+      visibility: visible;
+    }
+    .lightbox-inner {
+      position: relative;
+      max-width: 90vw;
+      max-height: 85vh;
+      text-align: center;
+    }
+    .lightbox-inner .lb-placeholder {
+      width: min(800px, 90vw);
+      height: min(500px, 70vh);
+      background: linear-gradient(145deg, #0f2740, #1a3a5c);
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      font-size: 80px;
+      color: rgba(201,162,39,.5);
+    }
+    .lightbox-close {
+      position: absolute;
+      top: -48px;
+      right: 0;
+      color: #fff;
+      font-size: 32px;
+      opacity: .8;
+    }
+    .lightbox-close:hover { opacity: 1; }
+    .lightbox-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.12);
+      color: #fff;
+      font-size: 22px;
+      display: grid;
+      place-items: center;
+      transition: background .15s;
+    }
+    .lightbox-nav:hover { background: rgba(255,255,255,.22); }
+    .lightbox-prev { left: -64px; }
+    .lightbox-next { right: -64px; }
+    .lightbox-caption {
+      color: #ccc;
+      font-size: 14px;
+      margin-top: 16px;
+    }
+
+    /* ========== CONTACT ========== */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 40px;
+      align-items: start;
+    }
+    .contact-info-card {
+      background: linear-gradient(160deg, #0b1c2c 0%, #123a5c 100%);
+      border-radius: 18px;
+      padding: 36px 32px;
+      color: #fff;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-info-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 80% 20%, rgba(201,162,39,.15) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .contact-info-card h3 {
+      font-family: var(--display);
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      position: relative;
+    }
+    .contact-row {
+      display: flex;
+      gap: 14px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .contact-row .icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(232,197,71,.15);
+      display: grid;
+      place-items: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .contact-row strong {
+      display: block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #e8c547;
+      margin-bottom: 3px;
+    }
+    .contact-row span, .contact-row a {
+      font-size: 14.5px;
+      color: #c5d6e4;
+      line-height: 1.45;
+    }
+    .contact-row a:hover { color: #e8c547; }
+    .contact-form-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 36px 32px;
+      box-shadow: var(--shadow);
+    }
+    .contact-form-card h3 {
+      font-family: var(--display);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+    .contact-form-card .form-note {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 24px;
+    }
+    .form-row {
+      margin-bottom: 16px;
+    }
+    .form-row label {
+      display: block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .form-row input,
+    .form-row textarea,
+    .form-row select {
+      width: 100%;
+      padding: 13px 14px;
+      border: 1.5px solid var(--line);
+      border-radius: 10px;
+      font: inherit;
+      font-size: 14px;
+      color: var(--ink);
+      background: #fff;
+      outline: none;
+      transition: border-color .15s, box-shadow .15s;
+    }
+    .form-row input:focus,
+    .form-row textarea:focus,
+    .form-row select:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(26,111,168,.14);
+    }
+    .form-row textarea { min-height: 120px; resize: vertical; }
+    .form-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .form-msg {
+      font-size: 13.5px;
+      margin-top: 12px;
+      min-height: 20px;
+    }
+    .form-msg.ok { color: var(--green); }
+    .form-msg.err { color: var(--red); }
+
+    /* ========== FOOTER ========== */
+    .site-footer {
+      background: linear-gradient(180deg, #0f2740 0%, #0b1c2c 100%);
+      color: #c5d6e4;
+      padding: 48px 28px 28px;
+      border-top: 1px solid rgba(201,162,39,.2);
+    }
+    .footer-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 36px;
+    }
+    .footer-brand .mark {
+      font-family: var(--display);
+      font-size: 20px;
+      font-weight: 800;
+      color: #e8c547;
+      letter-spacing: 0.04em;
+      margin-bottom: 10px;
+    }
+    .footer-brand p {
+      font-size: 13.5px;
+      color: #8fb0c8;
+      line-height: 1.6;
+      max-width: 280px;
+    }
+    .footer-col h4 {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #e8c547;
+      margin-bottom: 16px;
+    }
+    .footer-col a, .footer-col span {
+      display: block;
+      font-size: 13.5px;
+      color: #b8cfe0;
+      margin-bottom: 10px;
+      transition: color .15s;
+    }
+    .footer-col a:hover { color: #e8c547; }
+    .footer-bottom {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 12px;
+      color: #7a9bb5;
+    }
+
+    /* ========== RESPONSIVE ========== */
+    @media (max-width: 960px) {
+      .nav-desktop { display: none; }
+      .menu-toggle { display: grid; }
+      .about-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; gap: 28px; }
+      .profile-layout { grid-template-columns: 1fr; }
+      .profile-photo-col { padding: 32px 24px 28px; }
+      .profile-info-col { padding: 28px 24px 32px; }
+      .profile-meta-grid { grid-template-columns: 1fr; }
+      .lightbox-prev { left: 8px; }
+      .lightbox-next { right: 8px; }
+    }
+    @media (max-width: 600px) {
+      .header-inner { padding: 0 16px; height: 68px; }
+      .section { padding: 48px 18px; }
+      .page-hero { padding: 52px 18px 44px; }
+      .home-hero .content { padding: 80px 18px 60px; }
+      .form-grid-2 { grid-template-columns: 1fr; }
+      .hero-actions { flex-direction: column; }
+      .hero-actions .btn { width: 100%; }
+      .cta-banner { padding: 36px 24px; }
+      .team-card .photo-wrap { height: 200px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#/home" class="brand" data-route="home">
+        <div class="brand-mark">G&amp;A</div>
+        <div class="brand-text">
+          <strong>GABORA &amp; ASSOCIATES</strong>
+          <span>Law · Counsel · Community</span>
+        </div>
+      </a>
+      <nav class="nav-desktop" id="navDesktop">
+        <a href="#/home" class="nav-link" data-route="home">Home</a>
+        <a href="#/about" class="nav-link" data-route="about">About</a>
+        <a href="#/team" class="nav-link" data-route="team">Our Team</a>
+        <a href="#/news" class="nav-link" data-route="news">News</a>
+        <a href="#/media" class="nav-link" data-route="media">Media</a>
+        <a href="#/contact" class="nav-link" data-route="contact">Contact</a>
+        <a href="#/contact" class="nav-cta" data-route="contact">Get in Touch</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
+    </div>
+    <nav class="mobile-nav" id="mobileNav">
+      <a href="#/home" class="nav-link" data-route="home">Home</a>
+      <a href="#/about" class="nav-link" data-route="about">About</a>
+      <a href="#/team" class="nav-link" data-route="team">Our Team</a>
+      <a href="#/news" class="nav-link" data-route="news">News</a>
+      <a href="#/media" class="nav-link" data-route="media">Media</a>
+      <a href="#/contact" class="nav-link" data-route="contact">Contact</a>
+      <a href="#/contact" class="nav-cta" data-route="contact">Get in Touch</a>
+    </nav>
+  </header>
+
+  <!-- ========== APP / PAGES ========== -->
+  <main id="app">
+
+    <!-- HOME -->
+    <div class="page" id="page-home" data-page="home">
+      <section class="home-hero">
+        <div class="home-hero-grid"></div>
+        <div class="content">
+          <div class="badge">⚖ Kumasi · Ghana</div>
+          <h1>Precision. Integrity.<br><span>Results.</span></h1>
+          <p class="lead">Gabora &amp; Associates delivers trusted legal counsel across land, commercial, family and criminal matters — rooted in Ghana and built for the clients we serve.</p>
+          <div class="hero-actions">
+            <a href="#/team" class="btn btn-gold" data-route="team">Meet Our Team</a>
+            <a href="#/contact" class="btn btn-outline" data-route="contact">Contact the Firm</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div class="eyebrow">Practice Areas</div>
+          <h2>Legal Expertise</h2>
+          <p>Focused counsel across the matters that shape our clients’ lives and businesses.</p>
+        </div>
+        <div class="practice-grid">
+          <div class="practice-card">
+            <div class="icon">🏛</div>
+            <h3>Land &amp; Property</h3>
+            <p>Boundary disputes, title confirmation, conveyancing and land-related litigation.</p>
+          </div>
+          <div class="practice-card">
+            <div class="icon">📄</div>
+            <h3>Civil &amp; Commercial</h3>
+            <p>Contract recovery, debt enforcement, commercial disputes and corporate advisory.</p>
+          </div>
+          <div class="practice-card">
+            <div class="icon">👨‍👩‍👧</div>
+            <h3>Family Law</h3>
+            <p>Divorce, custody, probate, estate administration and related family proceedings.</p>
+          </div>
+          <div class="practice-card">
+            <div class="icon">⚖</div>
+            <h3>Criminal Defence</h3>
+            <p>Representation in criminal matters with diligence, discretion and advocacy.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" style="padding-top:0">
+        <div class="section-head">
+          <div class="eyebrow">Leadership</div>
+          <h2>Meet the Team</h2>
+          <p>Experienced practitioners committed to excellence and client service.</p>
+        </div>
+        <div class="team-preview-grid" id="homeTeamPreview"></div>
+        <div style="text-align:center;margin-top:32px">
+          <a href="#/team" class="btn btn-blue" data-route="team">View Full Team →</a>
+        </div>
+      </section>
+
+      <section class="section" style="padding-top:0">
+        <div class="cta-banner">
+          <h2>Ready to discuss your matter?</h2>
+          <p>Reach out to schedule a consultation with our chambers in Kumasi.</p>
+          <a href="#/contact" class="btn btn-gold" data-route="contact">Contact Us</a>
+        </div>
+      </section>
+    </div>
+
+    <!-- ABOUT -->
+    <div class="page" id="page-about" data-page="about">
+      <div class="page-hero">
+        <div class="inner">
+          <div class="eyebrow">Who We Are</div>
+          <h1>About Gabora &amp; Associates</h1>
+          <p>A chambers committed to professional excellence, integrity and community service in Ghana.</p>
+        </div>
+      </div>
+      <section class="section">
+        <div class="about-grid">
+          <div class="about-card">
+            <h3><span>🏛</span> Our Firm</h3>
+            <p>Gabora &amp; Associates is a law firm based in Kumasi, Ghana. We appear in the public chambers directory of the Ghana Bar Association and provide counsel across land, civil, commercial, family and criminal matters. Our practice is built on careful preparation, clear communication and results-oriented advocacy.</p>
+          </div>
+          <div class="about-card">
+            <h3><span>🎯</span> Mission</h3>
+            <p>To deliver precise, ethical and effective legal representation that protects our clients’ interests and upholds the highest standards of the profession.</p>
+          </div>
+          <div class="about-card">
+            <h3><span>🔭</span> Vision</h3>
+            <p>To be recognised as a trusted chambers in Ghana for integrity, professional competence and meaningful contribution to the communities we serve.</p>
+          </div>
+          <div class="about-card">
+            <h3><span>🤝</span> Identity</h3>
+            <p>Law · Counsel · Community. These three pillars guide how we practise, advise and engage — inside the courtroom and beyond it.</p>
+          </div>
+        </div>
+        <div class="values-grid">
+          <div class="value-item">
+            <div class="v-icon">⚖</div>
+            <h4>Integrity</h4>
+            <p>Honest advice and ethical conduct in every engagement.</p>
+          </div>
+          <div class="value-item">
+            <div class="v-icon">🎯</div>
+            <h4>Precision</h4>
+            <p>Thorough preparation and clear, practical counsel.</p>
+          </div>
+          <div class="value-item">
+            <div class="v-icon">🛡</div>
+            <h4>Client Focus</h4>
+            <p>Understanding each matter and protecting client interests.</p>
+          </div>
+          <div class="value-item">
+            <div class="v-icon">🌱</div>
+            <h4>Community</h4>
+            <p>Serving clients and contributing to the wider community.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- TEAM -->
+    <div class="page" id="page-team" data-page="team">
+      <div class="page-hero">
+        <div class="inner">
+          <div class="eyebrow">Our People</div>
+          <h1>Our Team</h1>
+          <p>Leadership and practitioners organised by role within the chambers.</p>
+        </div>
+      </div>
+      <section class="section">
+        <div class="team-hierarchy" id="teamHierarchy"></div>
+      </section>
+    </div>
+
+    <!-- NEWS -->
+    <div class="page" id="page-news" data-page="news">
+      <div class="page-hero">
+        <div class="inner">
+          <div class="eyebrow">Updates</div>
+          <h1>News &amp; Announcements</h1>
+          <p>Firm notices and general legal information.</p>
+        </div>
+      </div>
+      <section class="section">
+        <div class="news-grid" id="newsGrid"></div>
+      </section>
+    </div>
+
+    <!-- MEDIA -->
+    <div class="page" id="page-media" data-page="media">
+      <div class="page-hero">
+        <div class="inner">
+          <div class="eyebrow">Gallery</div>
+          <h1>Media</h1>
+          <p>Moments from chambers life and professional engagements.</p>
+        </div>
+      </div>
+      <section class="section">
+        <div class="media-grid" id="mediaGrid"></div>
+      </section>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="page" id="page-contact" data-page="contact">
+      <div class="page-hero">
+        <div class="inner">
+          <div class="eyebrow">Reach Us</div>
+          <h1>Contact</h1>
+          <p>We welcome enquiries from clients and professional colleagues.</p>
+        </div>
+      </div>
+      <section class="section">
+        <div class="contact-grid">
+          <div class="contact-info-card">
+            <h3>Chambers Details</h3>
+            <div class="contact-row">
+              <div class="icon">📍</div>
+              <div>
+                <strong>Address</strong>
+                <span>Plot 13, Block 10<br>Aboabo EXT., Kumasi<br>Ashanti Region, Ghana</span>
+              </div>
+            </div>
+            <div class="contact-row">
+              <div class="icon">📧</div>
+              <div>
+                <strong>Email</strong>
+                <a href="mailto:info@gaboraassociates.com">info@gaboraassociates.com</a>
+              </div>
+            </div>
+            <div class="contact-row">
+              <div class="icon">📞</div>
+              <div>
+                <strong>Phone</strong>
+                <span>Available on request via email</span>
+              </div>
+            </div>
+            <div class="contact-row">
+              <div class="icon">🗺</div>
+              <div>
+                <strong>Location</strong>
+                <a href="https://www.google.com/maps/search/?api=1&query=Aboabo+EXT+Kumasi+Ghana" target="_blank" rel="noopener">Open in Google Maps →</a>
+              </div>
+            </div>
+            <div class="contact-row">
+              <div class="icon">⏰</div>
+              <div>
+                <strong>Hours</strong>
+                <span>Monday – Friday<br>8:30 AM – 5:00 PM</span>
+              </div>
+            </div>
+          </div>
+          <div class="contact-form-card">
+            <h3>Send a Message</h3>
+            <p class="form-note">This form is a demonstration interface. Configure a form service (e.g. Formspree) to enable delivery.</p>
+            <form id="contactForm" onsubmit="return handleContactSubmit(event)">
+              <div class="form-grid-2">
+                <div class="form-row">
+                  <label for="cf_name">Full Name</label>
+                  <input type="text" id="cf_name" required placeholder="Your name">
+                </div>
+                <div class="form-row">
+                  <label for="cf_email">Email</label>
+                  <input type="email" id="cf_email" required placeholder="you@example.com">
+                </div>
+              </div>
+              <div class="form-row">
+                <label for="cf_phone">Phone (optional)</label>
+                <input type="tel" id="cf_phone" placeholder="+233 …">
+              </div>
+              <div class="form-row">
+                <label for="cf_subject">Subject</label>
+                <input type="text" id="cf_subject" required placeholder="Brief subject">
+              </div>
+              <div class="form-row">
+                <label for="cf_message">Message</label>
+                <textarea id="cf_message" required placeholder="How can we help?"></textarea>
+              </div>
+              <button type="submit" class="btn btn-gold" style="width:100%">Send Message</button>
+              <div class="form-msg" id="cfMsg"></div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="mark">GABORA &amp; ASSOCIATES</div>
+        <p>Law · Counsel · Community. Professional legal services from Kumasi, Ghana.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <a href="#/home" data-route="home">Home</a>
+        <a href="#/about" data-route="about">About</a>
+        <a href="#/team" data-route="team">Our Team</a>
+        <a href="#/news" data-route="news">News</a>
+        <a href="#/media" data-route="media">Media</a>
+        <a href="#/contact" data-route="contact">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Chambers</h4>
+        <span>Plot 13, Block 10</span>
+        <span>Aboabo EXT., Kumasi</span>
+        <span>Ashanti Region, Ghana</span>
+        <a href="mailto:info@gaboraassociates.com">info@gaboraassociates.com</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Gabora &amp; Associates. All rights reserved.</span>
+      <span>Listed with the Ghana Bar Association chambers directory.</span>
+    </div>
+  </footer>
+
+  <!-- ========== PROFILE MODAL ========== -->
+  <div class="profile-backdrop" id="profileBackdrop">
+    <div class="profile-modal" id="profileModal" role="dialog" aria-modal="true">
+      <button class="profile-close" id="profileClose" aria-label="Close">×</button>
+      <div class="profile-layout" id="profileContent"></div>
+    </div>
+  </div>
+
+  <!-- ========== ARTICLE MODAL ========== -->
+  <div class="article-backdrop" id="articleBackdrop">
+    <div class="article-modal" id="articleModal" role="dialog" aria-modal="true">
+      <button class="article-close" id="articleClose" aria-label="Close">×</button>
+      <div id="articleContent"></div>
+    </div>
+  </div>
+
+  <!-- ========== LIGHTBOX ========== -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" id="lbClose" aria-label="Close">×</button>
+      <button class="lightbox-nav lightbox-prev" id="lbPrev" aria-label="Previous">‹</button>
+      <div id="lbContent"></div>
+      <button class="lightbox-nav lightbox-next" id="lbNext" aria-label="Next">›</button>
+      <div class="lightbox-caption" id="lbCaption"></div>
+    </div>
+  </div>
+
+  <script>
+    /* ============================================================
+       TEAM DATA — verified from management system only.
+       Hierarchy follows organisational roles.
+       No invented degrees, biographies or specialisations.
+    ============================================================ */
+    const TEAM = [
+      {
+        id: 'USR000002',
+        name: 'Michael Alokori, Esq.',
+        role: 'CEO / Master of Chambers',
+        department: 'Management',
+        group: 'Leadership',
+        groupOrder: 1,
+        initials: 'MA',
+        email: 'michael.alokori@gaboraassociates.com',
+        phone: '',
+        status: 'ACTIVE',
+        photoUrl: null
+      },
+      {
+        id: 'USR000003',
+        name: 'Samuel Gabora',
+        role: 'Deputy CEO / Head of Chambers',
+        department: 'Management',
+        group: 'Leadership',
+        groupOrder: 1,
+        initials: 'SG',
+        email: 'samuel.gabora@gaboraassociates.com',
+        phone: '',
+        status: 'ACTIVE',
+        photoUrl: null
+      },
+      {
+        id: 'USR000004',
+        name: 'Esther Gyamfi',
+        role: 'Senior Lawyer',
+        department: 'Legal',
+        group: 'Legal Practice',
+        groupOrder: 2,
+        initials: 'EG',
+        email: 'esther.gyamfi@gaboraassociates.com',
+        phone: '',
+        status: 'ACTIVE',
+        photoUrl: null
+      },
+      {
+        id: 'USR000005',
+        name: 'Kojo Osin',
+        role: 'Barrister & Solicitor',
+        department: 'Legal',
+        group: 'Legal Practice',
+        groupOrder: 2,
+        initials: 'KO',
+        email: 'kojo.osin@gaboraassociates.com',
+        phone: '',
+        status: 'ACTIVE',
+        photoUrl: null
+      },
+      {
+        id: 'USR000006',
+        name: 'Akosah Betina',
+        role: 'Barrister & Solicitor',
+        department: 'Legal',
+        group: 'Legal Practice',
+        groupOrder: 2,
+        initials: 'AB',
+        email: 'akosah.betina@gaboraassociates.com',
+        phone: '',
+        status: 'ACTIVE',
+        photoUrl: null
+      },
+      {
+        id: 'USR000007',
+        name: 'Kwabena Kwaw Otchere',
+        role: 'Barrister & Solicitor',
+        department: 'Legal',
+        group: 'Legal Practice',
+        groupOrder: 2,
+        initials: 'KO',
+        email: 'kwabena.otchere@gaboraassociates.com',
+        phone: '',
+        status: 'ACTIVE',
+        photoUrl: null
+      },
+      {
+        id: 'USR000008',
+        name: 'Kusi Junior Ogyere',
+        role: 'Barrister & Solicitor',
+        department: 'Legal',
+        group: 'Legal Practice',
+        groupOrder: 2,
+        initials: 'KO',
+        email: 'kusi.ogyere@gaboraassociates.com',
+        phone: '',
+        status: 'ACTIVE',
+        photoUrl: null
+      },
+      {
+        id: 'USR000009',
+        name: 'Gifty',
+        role: 'Administrator',
+        department: 'Secretariat',
+        group: 'Secretariat',
+        groupOrder: 3,
+        initials: 'G',
+        email: 'gifty@gaboraassociates.com',
+        phone: '',
+        status: 'ACTIVE',
+        photoUrl: null
+      },
+      {
+        id: 'USR000010',
+        name: 'Yaa Benewaa',
+        role: 'Secretary',
+        department: 'Secretariat',
+        group: 'Secretariat',
+        groupOrder: 3,
+        initials: 'YB',
+        email: 'yaa.benewaa@gaboraassociates.com',
+        phone: '',
+        status: 'ACTIVE',
+        photoUrl: null
+      }
+    ];
+
+    /* News — generic firm notices only (no invented real announcements) */
+    const NEWS = [
+      {
+        id: 'n1',
+        date: '2026-09-01',
+        title: 'Welcome to the Gabora & Associates digital platform',
+        excerpt: 'Our chambers continues to strengthen client service and internal coordination through improved digital tools.',
+        body: 'Gabora & Associates is pleased to present its public-facing website. This platform provides an overview of our chambers, our team structure and how to reach us.\n\nWe remain committed to delivering professional legal counsel from our base in Kumasi and to maintaining the standards expected of a modern Ghanaian law firm.',
+        icon: '🏛'
+      },
+      {
+        id: 'n2',
+        date: '2026-08-15',
+        title: 'Chambers directory listing',
+        excerpt: 'Gabora & Associates appears in the public chambers directory published by the Ghana Bar Association.',
+        body: 'Our firm is listed in the public chambers directory maintained by the Ghana Bar Association. The directory entry identifies our office locality as Kumasi, with the published address at Plot 13, Block 10, Aboabo EXT., Kumasi.\n\nClients and colleagues may use the contact channels on this website for enquiries.',
+        icon: '📋'
+      },
+      {
+        id: 'n3',
+        date: '2026-07-20',
+        title: 'Professional standards and client service',
+        excerpt: 'A reminder of our commitment to integrity, preparation and clear communication in every matter.',
+        body: 'At Gabora & Associates we place integrity, careful preparation and clear client communication at the centre of our practice. Whether the matter involves land, commercial disputes, family proceedings or criminal defence, our approach remains consistent: understand the facts, advise honestly and advocate effectively.\n\nWe welcome professional colleagues and prospective clients who share these values.',
+        icon: '⚖'
+      }
+    ];
+
+    /* Media placeholders */
+    const MEDIA = [
+      { id: 'm1', caption: 'Chambers exterior', icon: '🏢' },
+      { id: 'm2', caption: 'Consultation room', icon: '📚' },
+      { id: 'm3', caption: 'Team engagement', icon: '🤝' },
+      { id: 'm4', caption: 'Professional setting', icon: '⚖' },
+      { id: 'm5', caption: 'Document review', icon: '📄' },
+      { id: 'm6', caption: 'Kumasi chambers', icon: '🏛' }
+    ];
+
+    /* ============================================================
+       ROUTER — hash-based SPA
+    ============================================================ */
+    const ROUTES = ['home', 'about', 'team', 'news', 'media', 'contact'];
+    let currentPage = 'home';
+
+    function getRouteFromHash() {
+      const hash = (location.hash || '#/home').replace(/^#\/?/, '').toLowerCase();
+      const route = hash.split(/[/?#]/)[0] || 'home';
+      return ROUTES.includes(route) ? route : 'home';
+    }
+
+    function navigate(route, push = true) {
+      if (!ROUTES.includes(route)) route = 'home';
+      currentPage = route;
+      if (push) {
+        const newHash = '#/' + route;
+        if (location.hash !== newHash) history.pushState({ page: route }, '', newHash);
+      }
+      showPage(route);
+      updateNav(route);
+      closeMobileNav();
+      window.scrollTo(0, 0);
+    }
+
+    function showPage(route) {
+      document.querySelectorAll('.page').forEach(p => {
+        p.classList.toggle('active', p.dataset.page === route);
+      });
+    }
+
+    function updateNav(route) {
+      document.querySelectorAll('.nav-link[data-route]').forEach(link => {
+        link.classList.toggle('active', link.dataset.route === route);
+      });
+    }
+
+    function closeMobileNav() {
+      const nav = document.getElementById('mobileNav');
+      if (nav) nav.classList.remove('open');
+    }
+
+    /* ============================================================
+       TEAM RENDERING
+    ============================================================ */
+    function renderTeamHierarchy() {
+      const container = document.getElementById('teamHierarchy');
+      if (!container) return;
+
+      const groups = {};
+      TEAM.forEach(m => {
+        if (!groups[m.group]) groups[m.group] = { order: m.groupOrder, members: [] };
+        groups[m.group].members.push(m);
+      });
+
+      const sortedGroups = Object.entries(groups).sort((a, b) => a[1].order - b[1].order);
+
+      container.innerHTML = sortedGroups.map(([groupName, data]) => `
+        <div class="team-group">
+          <h3>${esc(groupName)}</h3>
+          <div class="team-cards">
+            ${data.members.map(m => teamCardHTML(m)).join('')}
+          </div>
+        </div>
+      `).join('');
+
+      container.querySelectorAll('.team-card').forEach(card => {
+        card.addEventListener('click', () => openProfile(card.dataset.id));
+      });
+    }
+
+    function teamCardHTML(m) {
+      const photo = m.photoUrl
+        ? `<img src="${esc(m.photoUrl)}" alt="${esc(m.name)}">`
+        : `<div class="initials">${esc(m.initials)}</div>`;
+      return `
+        <div class="team-card" data-id="${esc(m.id)}">
+          <div class="photo-wrap">${photo}</div>
+          <div class="card-body">
+            <h3>${esc(m.name)}</h3>
+            <div class="role">${esc(m.role)}</div>
+            <div class="dept">${esc(m.department)}</div>
+            <div class="view-link">View Profile →</div>
+          </div>
+        </div>`;
+    }
+
+    function renderHomeTeamPreview() {
+      const el = document.getElementById('homeTeamPreview');
+      if (!el) return;
+      const leaders = TEAM.filter(m => m.groupOrder <= 2).slice(0, 4);
+      el.innerHTML = leaders.map(m => {
+        const photo = m.photoUrl
+          ? `<img src="${esc(m.photoUrl)}" alt="${esc(m.name)}">`
+          : `<div class="initials">${esc(m.initials)}</div>`;
+        return `
+          <div class="team-preview-card" data-id="${esc(m.id)}">
+            <div class="photo">${photo}</div>
+            <div class="info">
+              <h3>${esc(m.name)}</h3>
+              <span>${esc(m.role)}</span>
+            </div>
+          </div>`;
+      }).join('');
+      el.querySelectorAll('.team-preview-card').forEach(card => {
+        card.addEventListener('click', () => openProfile(card.dataset.id));
+      });
+    }
+
+    /* ============================================================
+       PROFILE MODAL
+    ============================================================ */
+    function openProfile(userId) {
+      const m = TEAM.find(x => x.id === userId);
+      if (!m) return;
+
+      const photo = m.photoUrl
+        ? `<img src="${esc(m.photoUrl)}" alt="${esc(m.name)}">`
+        : `<div class="initials">${esc(m.initials)}</div>`;
+
+      const content = document.getElementById('profileContent');
+      content.innerHTML = `
+        <div class="profile-photo-col">
+          <div class="profile-photo-circle">${photo}</div>
+          <h2>${esc(m.name)}</h2>
+          <div class="role">${esc(m.role)}</div>
+          <div class="dept">${esc(m.department)}</div>
+        </div>
+        <div class="profile-info-col">
+          <div class="section-label">Professional Profile</div>
+          <h3>${esc(m.name)}</h3>
+          <div class="profile-meta-grid">
+            <div class="profile-meta-item">
+              <label>Position</label>
+              <span>${esc(m.role)}</span>
+            </div>
+            <div class="profile-meta-item">
+              <label>Department</label>
+              <span>${esc(m.department)}</span>
+            </div>
+            <div class="profile-meta-item">
+              <label>Status</label>
+              <span>${esc(m.status)}</span>
+            </div>
+            ${m.email ? `
+            <div class="profile-meta-item">
+              <label>Email</label>
+              <span><a href="mailto:${esc(m.email)}" style="color:var(--blue)">${esc(m.email)}</a></span>
+            </div>` : ''}
+          </div>
+          <div class="profile-bio">
+            <p>${esc(m.name)} serves as <strong>${esc(m.role)}</strong> in the ${esc(m.department)} department at Gabora &amp; Associates.</p>
+            <p style="margin-top:10px">Further professional biography, qualifications and areas of focus will be published here as they are formally confirmed by chambers.</p>
+          </div>
+          <p class="profile-note">Profile information is drawn from the firm’s verified records. Additional details may be added by authorised staff.</p>
+        </div>`;
+
+      const backdrop = document.getElementById('profileBackdrop');
+      backdrop.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeProfile() {
+      document.getElementById('profileBackdrop').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    /* ============================================================
+       NEWS
+    ============================================================ */
+    function renderNews() {
+      const grid = document.getElementById('newsGrid');
+      if (!grid) return;
+      grid.innerHTML = NEWS.map(n => `
+        <div class="news-card" data-id="${esc(n.id)}">
+          <div class="thumb">${n.icon}</div>
+          <div class="body">
+            <div class="date">${fmtDate(n.date)}</div>
+            <h3>${esc(n.title)}</h3>
+            <p>${esc(n.excerpt)}</p>
+          </div>
+        </div>`).join('');
+      grid.querySelectorAll('.news-card').forEach(card => {
+        card.addEventListener('click', () => openArticle(card.dataset.id));
+      });
+    }
+
+    function openArticle(id) {
+      const n = NEWS.find(x => x.id === id);
+      if (!n) return;
+      const body = n.body.split('\n\n').map(p => `<p>${esc(p)}</p>`).join('');
+      document.getElementById('articleContent').innerHTML = `
+        <div class="article-hero">${n.icon}</div>
+        <div class="article-body">
+          <div class="date">${fmtDate(n.date)}</div>
+          <h2>${esc(n.title)}</h2>
+          ${body}
+        </div>`;
+      document.getElementById('articleBackdrop').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeArticle() {
+      document.getElementById('articleBackdrop').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    /* ============================================================
+       MEDIA / LIGHTBOX
+    ============================================================ */
+    let lbIndex = 0;
+
+    function renderMedia() {
+      const grid = document.getElementById('mediaGrid');
+      if (!grid) return;
+      grid.innerHTML = MEDIA.map((m, i) => `
+        <div class="media-item" data-index="${i}">
+          <div class="placeholder">${m.icon}</div>
+          <div class="overlay"><span>${esc(m.caption)}</span></div>
+        </div>`).join('');
+      grid.querySelectorAll('.media-item').forEach(item => {
+        item.addEventListener('click', () => openLightbox(Number(item.dataset.index)));
+      });
+    }
+
+    function openLightbox(index) {
+      lbIndex = index;
+      updateLightbox();
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function updateLightbox() {
+      const m = MEDIA[lbIndex];
+      document.getElementById('lbContent').innerHTML = `<div class="lb-placeholder">${m.icon}</div>`;
+      document.getElementById('lbCaption').textContent = m.caption;
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function lbNav(dir) {
+      lbIndex = (lbIndex + dir + MEDIA.length) % MEDIA.length;
+      updateLightbox();
+    }
+
+    /* ============================================================
+       CONTACT FORM
+    ============================================================ */
+    function handleContactSubmit(e) {
+      e.preventDefault();
+      const msg = document.getElementById('cfMsg');
+      msg.className = 'form-msg ok';
+      msg.textContent = 'Thank you. This demonstration form does not send messages yet. Please email the chambers directly or configure a form service.';
+      return false;
+    }
+
+    /* ============================================================
+       HELPERS
+    ============================================================ */
+    function esc(str) {
+      if (str == null) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function fmtDate(iso) {
+      try {
+        const d = new Date(iso + 'T00:00:00');
+        return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+      } catch (e) { return iso; }
+    }
+
+    /* ============================================================
+       INIT
+    ============================================================ */
+    function init() {
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Routing
+      document.querySelectorAll('[data-route]').forEach(el => {
+        el.addEventListener('click', (e) => {
+          e.preventDefault();
+          navigate(el.dataset.route);
+        });
+      });
+
+      window.addEventListener('popstate', () => {
+        navigate(getRouteFromHash(), false);
+      });
+
+      window.addEventListener('hashchange', () => {
+        navigate(getRouteFromHash(), false);
+      });
+
+      // Mobile menu
+      document.getElementById('menuToggle').addEventListener('click', () => {
+        document.getElementById('mobileNav').classList.toggle('open');
+      });
+
+      // Profile modal
+      document.getElementById('profileClose').addEventListener('click', closeProfile);
+      document.getElementById('profileBackdrop').addEventListener('click', (e) => {
+        if (e.target === e.currentTarget) closeProfile();
+      });
+
+      // Article modal
+      document.getElementById('articleClose').addEventListener('click', closeArticle);
+      document.getElementById('articleBackdrop').addEventListener('click', (e) => {
+        if (e.target === e.currentTarget) closeArticle();
+      });
+
+      // Lightbox
+      document.getElementById('lbClose').addEventListener('click', closeLightbox);
+      document.getElementById('lbPrev').addEventListener('click', () => lbNav(-1));
+      document.getElementById('lbNext').addEventListener('click', () => lbNav(1));
+      document.getElementById('lightbox').addEventListener('click', (e) => {
+        if (e.target === e.currentTarget) closeLightbox();
+      });
+
+      // ESC
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          closeProfile();
+          closeArticle();
+          closeLightbox();
+        }
+      });
+
+      // Render dynamic content
+      renderTeamHierarchy();
+      renderHomeTeamPreview();
+      renderNews();
+      renderMedia();
+
+      // Initial route
+      navigate(getRouteFromHash(), false);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+  </script>
+</body>
+</html>
