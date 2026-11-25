@@ -1329,6 +1329,72 @@
       .cta-banner { padding: 36px 24px; }
       .team-card .photo-wrap { height: 200px; }
     }
+
+    /* ===== PREMIUM REBUILD LAYER ===== */
+    :root {
+      --navy:#091a2b; --navy-deep:#06111d; --blue:#176a9e; --cyan:#35b7d4;
+      --gold:#c9a227; --gold-light:#f1d36b; --bg:#eef3f8;
+      --shadow:0 10px 28px rgba(7,25,42,.10);
+      --shadow-lg:0 22px 48px rgba(7,25,42,.18);
+      --radius:18px;
+    }
+    body { background:linear-gradient(180deg,#f7f9fc,#edf3f8); }
+    .site-header { background:linear-gradient(145deg,#061321,#102d48 72%,#0b2034); box-shadow:0 8px 26px #06132140; }
+    .header-inner { height:86px; }
+    .brand-mark { border-radius:15px; box-shadow:0 7px 0 #806619,0 12px 24px #0005,inset 0 2px 3px #fff8; }
+    .nav-desktop { gap:7px; }
+    .nav-link { border:1px solid transparent; border-radius:11px; padding:12px 15px; transition:all .22s ease; }
+    .nav-link:hover { transform:translateY(-2px); background:linear-gradient(145deg,#25435d,#10283e); box-shadow:0 4px 0 #061321,0 8px 18px #0003; border-color:#ffffff18; }
+    .nav-link.active { color:#f4d66d; background:linear-gradient(145deg,#263b4d,#14293b); box-shadow:inset 0 2px 5px #0003,0 3px 0 #061321; }
+    .nav-cta,.btn-gold { border-radius:12px; box-shadow:0 5px 0 #806619,0 10px 22px #0003,inset 0 1px 0 #fff4; }
+    .nav-cta:hover,.btn-gold:hover { transform:translateY(-3px); }
+    .menu-toggle { box-shadow:0 4px 0 #040d15,0 8px 18px #0003; }
+    .home-hero { min-height:78vh; }
+    .home-hero .content { padding-top:115px;padding-bottom:105px; }
+    .home-hero h1 { text-shadow:0 5px 22px #0003; }
+    .page-hero { padding:76px 28px 68px; }
+    .section { padding-top:72px;padding-bottom:72px; }
+    .practice-card,.team-preview-card,.team-card,.about-card,.value-item,.news-card,.contact-form-card {
+      border:1px solid #dce5ee; border-radius:20px; box-shadow:0 5px 0 #dfe7ef,0 12px 28px #0b1c2c0d;
+      transition:transform .24s ease,box-shadow .24s ease,border-color .24s ease;
+    }
+    .practice-card:hover,.team-preview-card:hover,.team-card:hover,.value-item:hover,.news-card:hover {
+      transform:translateY(-7px);box-shadow:0 7px 0 #d5e0ea,0 22px 42px #0b1c2c20;border-color:#b8cddd;
+    }
+    .practice-card { padding:30px 26px; }
+    .practice-card .icon,.about-card h3 span { box-shadow:inset 0 2px 3px #fff,0 5px 12px #176a9e18; }
+    .team-card { cursor:pointer; }
+    .team-card .photo-wrap { height:205px; }
+    .team-card .card-body { padding:22px 18px 24px; }
+    .team-card .view-link { opacity:1;transform:none; }
+    .news-card .thumb { height:205px; }
+    .cta-banner { border:1px solid #ffffff20;box-shadow:0 8px 0 #061321,0 24px 48px #0b1c2c25; }
+    .contact-info-card,.profile-photo-col { background:linear-gradient(145deg,#071827,#123b5b); }
+    .site-footer { box-shadow:0 -8px 28px #0718270a; }
+    :focus-visible { outline:3px solid #e8c547;outline-offset:3px; }
+    /* Org chart */
+    .team-hierarchy { gap:42px; }
+    .org-chart { text-align:center; padding:8px 0 22px; }
+    .org-level { display:flex;justify-content:center;align-items:stretch;gap:22px;flex-wrap:wrap; }
+    .org-node { width:min(330px,100%);position:relative; }
+    .org-node .team-card { height:100%; }
+    .org-connector { height:34px;width:2px;background:linear-gradient(#c9a227,#9fb4c5);margin:0 auto;position:relative; }
+    .org-connector:after { content:"";position:absolute;bottom:0;left:-4px;width:8px;height:8px;border-right:2px solid #9fb4c5;border-bottom:2px solid #9fb4c5;transform:rotate(45deg); }
+    .org-branch { position:relative;padding-top:28px; }
+    .org-branch:before { content:"";position:absolute;top:0;left:16%;right:16%;height:2px;background:#b7c7d5; }
+    .org-branch .org-node:before { content:"";position:absolute;top:-28px;left:50%;height:28px;width:2px;background:#b7c7d5; }
+    .org-label { display:inline-block;margin:0 0 15px;padding:8px 15px;border-radius:999px;background:#e4edf5;color:#31536d;font-size:11px;font-weight:800;letter-spacing:.13em;text-transform:uppercase; }
+    .team-group { background:#f8fbfd;border:1px solid #dce6ef;border-radius:22px;padding:25px;box-shadow:0 5px 0 #e3eaf1,0 12px 28px #0b1c2c08; }
+    .team-group h3 { color:#173b58;border-bottom-color:#d9e5ef; }
+    .team-group h3:before { background:var(--gold); }
+    @media(max-width:700px) {
+      .header-inner{height:72px}.home-hero{min-height:unset}.home-hero .content{padding:78px 20px}
+      .org-branch{padding-top:18px}.org-branch:before{display:none}.org-branch .org-node:before{display:none}
+      .org-connector{height:24px}.team-group{padding:18px}
+      .team-cards{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+    }
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+
   </style>
 </head>
 <body>
@@ -1883,24 +1949,31 @@
     function renderTeamHierarchy() {
       const container = document.getElementById('teamHierarchy');
       if (!container) return;
-
-      const groups = {};
-      TEAM.forEach(m => {
-        if (!groups[m.group]) groups[m.group] = { order: m.groupOrder, members: [] };
-        groups[m.group].members.push(m);
-      });
-
-      const sortedGroups = Object.entries(groups).sort((a, b) => a[1].order - b[1].order);
-
-      container.innerHTML = sortedGroups.map(([groupName, data]) => `
-        <div class="team-group">
-          <h3>${esc(groupName)}</h3>
-          <div class="team-cards">
-            ${data.members.map(m => teamCardHTML(m)).join('')}
+      const find = role => TEAM.find(m => m.role === role);
+      const ceo = find('CEO / Master of Chambers');
+      const deputy = find('Deputy CEO / Head of Chambers');
+      const legal = TEAM.filter(m => m.group === 'Legal Practice');
+      const secretariat = TEAM.filter(m => m.group === 'Secretariat');
+      const node = m => m ? `<div class="org-node">${teamCardHTML(m)}</div>` : '';
+      container.innerHTML = `
+        <div class="org-chart">
+          <div class="org-label">Chambers Leadership &amp; Reporting Structure</div>
+          <div class="org-level">${node(ceo)}</div>
+          <div class="org-connector" aria-hidden="true"></div>
+          <div class="org-level">${node(deputy)}</div>
+          <div class="org-branch">
+            <div class="org-level">
+              <div class="org-node">
+                <div class="org-label">Legal Practice</div>
+                <div class="team-cards">${legal.map(m => teamCardHTML(m)).join('')}</div>
+              </div>
+              <div class="org-node">
+                <div class="org-label">Secretariat</div>
+                <div class="team-cards">${secretariat.map(m => teamCardHTML(m)).join('')}</div>
+              </div>
+            </div>
           </div>
-        </div>
-      `).join('');
-
+        </div>`;
       container.querySelectorAll('.team-card').forEach(card => {
         card.addEventListener('click', () => openProfile(card.dataset.id));
       });
